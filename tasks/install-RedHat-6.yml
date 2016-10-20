@@ -1,0 +1,7 @@
+- name: RHEL6 | Install certbot-auto
+  get_url:
+    url: "{{ certbot_url }}"
+    dest: "{{ certbot_dir }}"
+    owner: root
+    group: root
+    mode: 0755

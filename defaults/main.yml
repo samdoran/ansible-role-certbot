@@ -1,0 +1,7 @@
+certbot_url: https://dl.eff.org/certbot-auto
+certbot_cron:
+  name: Renew TLS certificate
+  job: "{{ certbot_bin_path }} renew --quiet"
+  # day: '*'
+  hour: 2,22
+  # minute: 0

@@ -1,0 +1,4 @@
+certbot_dir: /usr/local/bin
+certbot_bin_path: "{{ certbot_dir }}/certbot-auto"
+
+

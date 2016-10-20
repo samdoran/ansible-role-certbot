@@ -1,0 +1,5 @@
+- name: UBUNTU16 | Install certbot-auto
+  apt:
+    name: letsencrypt
+    state: latest
+    update_cache: yes

@@ -1,0 +1,4 @@
+- name: RHEL7 | Install certbot
+  yum:
+    name: certbot
+    state: latest

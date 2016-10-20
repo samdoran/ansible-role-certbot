@@ -1,0 +1,5 @@
+- hosts: all
+
+  roles:
+    - repo-epel
+    - role_under_test
