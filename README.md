@@ -8,7 +8,7 @@ Certbot
 Requirements
 ------------
 
-- samdoran.repo-epel
+- samdoran.repo-epel (RHEL/CentOS)
 
 Role Variables
 --------------

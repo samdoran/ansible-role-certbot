@@ -3,5 +3,7 @@
   become: yes
 
   roles:
-    - repo-epel
+    - role: repo-epel
+      when: ansible_os_family == 'RedHat'
+
     - certbot

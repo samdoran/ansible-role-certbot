@@ -1,5 +1,7 @@
 - hosts: all
 
   roles:
-    - repo-epel
+    - role: repo-epel
+      when: ansible_os_family == 'RedHat'
+
     - role_under_test
