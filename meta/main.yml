@@ -1,6 +1,6 @@
 galaxy_info:
   author: Sam Doran
-  description:
+  description: Certbot generates and renews TLS certificates automatically.
   company: Ansible by Red Hat
   license: MIT
   min_ansible_version: 2.1
