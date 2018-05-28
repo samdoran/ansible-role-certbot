@@ -1,4 +1,6 @@
 - name: RHEL7 | Install certbot
   yum:
-    name: certbot
+    name: "{{ certbot_packages }}"
     state: present
+  tags:
+    - certbot

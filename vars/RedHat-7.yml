@@ -1,2 +1,6 @@
 certbot_dir: /bin
 certbot_bin_path: "{{ certbot_dir }}/certbot"
+certbot_packages:
+  - certbot
+  - certbot-nginx
+  - certbot-apache

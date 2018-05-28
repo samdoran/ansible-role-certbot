@@ -1,4 +1,6 @@
 - name: UBUNTU16 | Install certbot-auto
   apt:
-    name: letsencrypt
+    name: "{{ certbot_packages }}"
     state: present
+  tags:
+    - certbot
