@@ -1,7 +1,0 @@
-- hosts: localhost
-
-  roles:
-    - role: repo-epel
-      when: ansible_os_family == 'RedHat'
-
-    - role_under_test
