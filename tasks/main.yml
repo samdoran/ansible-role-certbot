@@ -1,22 +1,25 @@
 - name: Include distribution specific variables
-  include_vars: "{{ ansible_os_family }}-{{ ansible_distribution_major_version }}.yml"
-  when: ansible_distribution != 'Ubuntu'
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_facts.os_family }}-{{ ansible_facts.distribution_major_version }}.yml"
+    - "{{ ansible_facts.distribution }}-{{ ansible_facts.distribution_version }}.yml"
+    - "{{ ansible_facts.distribution }}-{{ ansible_facts.distribution_major_version }}.yml"
+    - "{{ ansible_facts.os_family }}.yml"
+    - "{{ ansible_facts.os_distribution }}.yml"
+    - defaults/main.yml
   tags:
     - certbot
 
-- name: Include variables for Ubuntu
-  include_vars: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
-  when: ansible_distribution == 'Ubuntu'
-  tags:
-    - certbot
-
-- include_tasks: "install-{{ ansible_os_family }}-{{ ansible_distribution_major_version }}.yml"
-  when: ansible_distribution != 'Ubuntu'
-  tags:
-    - certbot
-
-- include_tasks: "install-{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
-  when: ansible_distribution == 'Ubuntu'
+- name: Include installation tasks
+  include_tasks: "{{ outer_item }}"
+  with_first_found:
+    - "install-{{ ansible_facts.os_family }}-{{ ansible_facts.distribution_major_version }}.yml"
+    - "install-{{ ansible_facts.distribution }}-{{ ansible_facts.distribution_version }}.yml"
+    - "install-{{ ansible_facts.distribution }}-{{ ansible_facts.distribution_major_version }}.yml"
+    - "install-{{ ansible_facts.os_family }}.yml"
+    - "install-{{ ansible_facts.os_distribution }}.yml"
+  loop_control:
+    loop_var: outer_item
   tags:
     - certbot
 

@@ -15,7 +15,7 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - trusty
-        # - xenial
+        - xenial
 
   galaxy_tags:
     - system

@@ -1,11 +1,11 @@
-- name: UBUNTU16 | Add certbot repo key
+- name: UBUNTU18 | Add certbot repo key
   apt_key:
     keyserver: keyserver.ubuntu.com
     id: 7BF576066ADA65728FC7E70A8C47BE8E75BCA694
   tags:
     - certbot
 
-- name: UBUNTU16 | Add repositories
+- name: UBUNTU18 | Add repositories
   apt_repository:
     repo: "{{ item }}"
   loop:
@@ -14,7 +14,7 @@
   tags:
     - certbot
 
-- name: UBUNTU16 | Install certbot
+- name: UBUNTU18 | Install certbot
   apt:
     name: "{{ certbot_packages }}"
     state: present
