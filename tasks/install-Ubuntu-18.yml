@@ -9,8 +9,8 @@
   apt_repository:
     repo: "{{ item }}"
   loop:
-    - 'deb http://archive.ubuntu.com/ubuntu {{ ansible_facts.lsb.codename}} universe'
-    - 'deb http://ppa.launchpad.net/certbot/certbot/ubuntu {{ ansible_facts.lsb.codename}} main'
+    - 'deb http://archive.ubuntu.com/ubuntu {{ ansible_facts.lsb.codename }} universe'
+    - 'deb http://ppa.launchpad.net/certbot/certbot/ubuntu {{ ansible_facts.lsb.codename }} main'
   tags:
     - certbot
 
