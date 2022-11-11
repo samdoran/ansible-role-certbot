@@ -1,7 +1,6 @@
 Certbot
 =========
 [![Galaxy](https://img.shields.io/badge/galaxy-samdoran.certbot-blue.svg?style=flat)](https://galaxy.ansible.com/samdoran/certbot)
-[![Build Status](https://travis-ci.org/samdoran/ansible-role-certbot.svg?branch=master)](https://travis-ci.org/samdoran/ansible-role-certbot)
 
 [Certbot](https://certbot.eff.org/about/) automatically configures TLS certificates for various web servers for free.
 
